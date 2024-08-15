@@ -9,27 +9,7 @@ A simple and intuitive todo list application built with React. This project is d
 - Tasks are dynamically rendered using React components.
 - Simple and responsive UI.
 
-## Demo
-
-![Todo List App Screenshot](path/to/screenshot.png) <!-- Replace with actual screenshot path if needed -->
-
 ## Project Structure
-
-todo-app/
-├── public/
-│ ├── index.html
-│ └── ...
-├── src/
-│ ├── components/
-│ │ ├── AddTodo.js
-│ │ ├── TodoItem.js
-│ │ └── TodoList.js
-│ ├── App.js
-│ ├── index.js
-│ └── ...
-├── package.json
-├── README.md
-└── ...
 
 - **`public/`**: Contains the HTML template and other static assets.
 - **`src/`**: Contains the React components and main application logic.

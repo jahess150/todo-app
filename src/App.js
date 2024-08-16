@@ -4,7 +4,7 @@ import AddTodo from './components/AddTodo';
 import './App.css';
 
 function App() {
-  // Initialize tasks from local storage if available
+  // Initialize tasks and folders from local storage if available
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem('tasks');
     return savedTasks ? JSON.parse(savedTasks) : [];
@@ -15,13 +15,13 @@ function App() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
 
-  const addTask = (taskText) => {
-    const newTask = { id: Date.now(), text: taskText, completed: false};
+  const addTask = (taskText, priority) => {
+    const newTask = { id: Date.now(), text: taskText, completed: false, priority: priority};
     setTasks([...tasks, newTask]);
   }
-
+  
   const clearTasks = () => {
-    setTasks([]); // Set the tasks array to empty
+    setTasks([]); // Clear all current tasks
   }
 
   // Toggle functionality

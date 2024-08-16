@@ -1,3 +1,19 @@
 .App {
   text-align: center;
 }
+
+ul {
+  list-style-type: none;
+}
+
+.High {
+  color: red;
+}
+
+.Medium {
+  color: orange;
+}
+
+.Low {
+  color: green;
+}

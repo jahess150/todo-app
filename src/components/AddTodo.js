@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function AddTodo({ addTask }) {
+function AddTodo({ addTask, clearTasks }) {
     const [inputValue, setInputValue] = useState('');
 
     const handleSubmit = (e) => {
@@ -19,7 +19,8 @@ function AddTodo({ addTask }) {
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Add a new task"
             />
-            <button type="submit">Add Task</button>
+            <button id="add-task" type="submit">Add Task</button>
+            <button id="clear-tasks" type="button" onClick={clearTasks}>Clear Tasks</button>
         </form>
     );
 }

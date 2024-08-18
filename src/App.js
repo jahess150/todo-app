@@ -9,6 +9,12 @@ function App() {
     const savedTasks = localStorage.getItem('tasks');
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
+  
+  // Initialize name and greeting for when user enters site
+  // const [name, setName] = useState(localStorage.getItem('userName') || '');
+  // const [greeting, setGreeting] = useState('');
+
+  // TODO: Finish user greeting functionality
 
   // Save tasks to local storage whenever they change
   useEffect(() => {

@@ -1,19 +1,63 @@
+/* App Component */
 .App {
-  text-align: center;
+    background-color: rgba(
+        173,
+        216,
+        230,
+        0.5
+    ); /* Light blue with 30% opacity */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
 }
 
+/* AddTodo Component */
+form {
+    background-color: rgba(
+        144,
+        238,
+        144,
+        0.5
+    ); /* Light green with 30% opacity */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* TodoList Component */
 ul {
-  list-style-type: none;
+    background-color: rgba(
+        255,
+        182,
+        193,
+        0.5
+    ); /* Light pink with 30% opacity */
+    padding: 20px;
+    border-radius: 8px;
+    list-style-type: none;
+}
+
+/* TodoItem Component */
+li {
+    background-color: rgba(
+        255,
+        255,
+        224,
+        0.5
+    ); /* Light yellow with 30% opacity */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
 }
 
 .High {
-  color: red;
+    color: red;
 }
 
 .Medium {
-  color: orange;
+    color: orange;
 }
 
 .Low {
-  color: green;
+    color: green;
 }

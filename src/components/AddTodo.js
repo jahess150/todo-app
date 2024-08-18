@@ -3,13 +3,16 @@ import React, { useState } from "react";
 function AddTodo({ addTask, clearTasks }) {
     const [inputValue, setInputValue] = useState("");
     const [priority, setPriority] = useState("Medium"); // Default priority is medium
+    const [tags, setTags] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (inputValue.trim()) {
-            addTask(inputValue.trim(), priority);
+            const tagArray = tags.split(",").map((tag) => tag.trim());
+            addTask(inputValue.trim(), priority, tagArray);
             setInputValue(""); // Clear input
             setPriority("Medium");
+            setTags("");
         }
     };
 
@@ -29,6 +32,12 @@ function AddTodo({ addTask, clearTasks }) {
                 <option value='Medium'>Medium</option>
                 <option value='Low'>Low</option>
             </select>
+            <input
+                type='text'
+                value={tags}
+                onChange={(e) => setTags(e.target.value)}
+                placeholder='Enter tags (comma-separated)'
+            />
             <button id='add-task' type='submit'>
                 Add Task
             </button>

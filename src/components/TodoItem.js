@@ -2,7 +2,7 @@ import React from "react";
 
 function TodoItem({ task, toggleTaskCompletion }) {
     return (
-        <li className={task.priority}>
+        <li className={task.priority.toLowerCase()}>
             <input
                 type='checkbox'
                 checked={task.completed}
@@ -14,6 +14,7 @@ function TodoItem({ task, toggleTaskCompletion }) {
                 }}
                 className={task.priority}
             >
+                {!task.tags.length ? `[${task.tags.join(", ")}] ` : ""}{" "}
                 {task.text} - <strong>{task.priority} Priority</strong>
             </span>
         </li>

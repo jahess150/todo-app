@@ -17,18 +17,21 @@ function App() {
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }, [tasks]);
 
-    const addTask = (taskText, priority) => {
+    // Add task with text, priority, and any tags
+    const addTask = (taskText, priority, tags) => {
         const newTask = {
             id: Date.now(),
             text: taskText,
             completed: false,
             priority: priority,
+            tags: tags || [],
         };
         setTasks([...tasks, newTask]);
     };
 
+    // Clear all current tasks
     const clearTasks = () => {
-        setTasks([]); // Clear all current tasks
+        setTasks([]);
     };
 
     // Toggle functionality
@@ -41,6 +44,13 @@ function App() {
             )
         );
     };
+
+    // Filter tasks based on search query (case-insensitive)
+    const filteredTasks = tasks.filter((task) =>
+        task.tags.some((tag) =>
+            tag.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+    );
 
     /* ------ USER GREETING FUNCTIONALITY ------ */
 
@@ -79,7 +89,7 @@ function App() {
             <h1>Todo List</h1>
             <AddTodo addTask={addTask} clearTasks={clearTasks} />
             <TodoList
-                tasks={tasks}
+                tasks={filteredTasks}
                 toggleTaskCompletion={toggleTaskCompletion}
             />
         </div>

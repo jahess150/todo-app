@@ -45,13 +45,6 @@ function App() {
         );
     };
 
-    // Filter tasks based on search query (case-insensitive)
-    const filteredTasks = tasks.filter((task) =>
-        task.tags.some((tag) =>
-            tag.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-    );
-
     /* ------ USER GREETING FUNCTIONALITY ------ */
 
     // Initialize name and greeting for when user enters site
@@ -89,7 +82,7 @@ function App() {
             <h1>Todo List</h1>
             <AddTodo addTask={addTask} clearTasks={clearTasks} />
             <TodoList
-                tasks={filteredTasks}
+                tasks={tasks}
                 toggleTaskCompletion={toggleTaskCompletion}
             />
         </div>

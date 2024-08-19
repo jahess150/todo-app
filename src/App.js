@@ -45,13 +45,6 @@ function App() {
         );
     };
 
-    // Filter tasks based on search query (case-insensitive)
-    const filteredTasks = tasks.filter((task) =>
-        task.tags.some((tag) =>
-            tag.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-    );
-
     /* ------ USER GREETING FUNCTIONALITY ------ */
 
     // Initialize name and greeting for when user enters site
